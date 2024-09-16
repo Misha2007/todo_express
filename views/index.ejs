@@ -14,23 +14,22 @@
                 <div class="card-content">
                   <span class="card-title">ToDO List</span>
                   <div class="row">
-                    <form class="col s12">
+                    <form class="col s12" method="POST">
                       <div class="row">
                         <div class="input-field col s12">
                           <input placeholder="Task" id="task" type="Text"></input>
                           <label for="textarea1">Insert task</label>
                         </div>
                       </div>
-                      <input type="button" value="Add task" class="btn">
+                      <input type="submit" value="Add task" class="btn">
                     </form>
                   </div>
                 </div>
                 <div class="card-action">
                     <ul id="tasks" class="collection">
-                        <li class="collection-item">Study JS</li>
-                        <li class="collection-item">Study HTML</li>
-                        <li class="collection-item">Study CSS</li>
-                        <li class="collection-item">Study OOP</li>
+                        <% tasks.forEach((task) => { %> 
+                          <li class="collection-item"><%= task %></li>
+                        <% }) %> 
                     </ul>
                 </div>
               </div>
@@ -38,5 +37,8 @@
           </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        
+    </script>
 </body>
 </html>
