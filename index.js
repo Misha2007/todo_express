@@ -72,6 +72,16 @@ app.get("/delete-task/:taskId", (req, res) => {
   });
 });
 
+app.get("/delete-all-tasks", (req, res) => {
+    console.log("delete all tasks")
+    readFile("./tasks.json").then((tasks) => {
+        tasks.length = 0;
+        let data = JSON.stringify([], null, 0);
+        writeFile("tasks.json", data);
+        res.redirect("/");
+      });
+  });
+
 app.listen(3001, () => {
   console.log("Server is running on port 3001");
 });
